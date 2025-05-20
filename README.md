@@ -25,12 +25,10 @@ In both scenarios, the newly executed process (the payload) will appear as `[kwo
 
 Regardless of retrieval method (curl or decoding), the payload will be stored as a file in memory and executed via file descriptor with `fexecve` avoiding any on-disk presence except for the dropper itself. 
 
-# Obfuscation
-
-## Usage
+# Usage
 - Modify the source code to update the URL of the payload to be downloaded (`dropped_curl.c`) or add the XOR encoded payload (`dropper_xor.c`).
 
-### Encoding your payload
+## Encoding your payload
 
 Supporting tooling under `/encoders` can be used to encode either a bytecode format (e.g. `xxd -i <binary> > <output.h>`) or an existing ELF64 binary (with no conversion required). 
 
